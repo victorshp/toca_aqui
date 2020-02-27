@@ -1,14 +1,18 @@
 class OrdersController < ApplicationController
   def new
-    @order = Order.save
+    @order = Order.new
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = Order.new
+    @order.date = Date.today
+    @order.instrument = params[:instrument_id]
+    @order.user = current_user
     if @order.save
       redirect_to user_path
     else
-      render :new
+      @instrument = Instrument.find(params[:instrument_id])
+      render 'instruments/show'
     end
   end
 
