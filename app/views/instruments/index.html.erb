@@ -1,2 +1,16 @@
-<h1>Instruments#index</h1>
-<p>Find me in app/views/instruments/index.html.erb</p>
+<div class="row" style="" >
+  <% @instruments.each do |instrument| %>
+    <div class="col-md-6">
+      <div class="card-product mt-5" style='width:560px; height: 250px;' >
+        <div class="card-product-infos">
+          <h3><%= instrument.name %></h3>
+          <h2><%= instrument.inst_type %></h2>
+          <p><%= instrument.price %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
