@@ -6,12 +6,10 @@
   display: flex;
   align-items: center;
   width: 360px;
-}
-
-.fa-guitar {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
+  background-image: linear-gradient(rgba(255, 164, 27, 0.3), rgba(255, 164, 27, 0.3)), url(https://i.picsum.photos/id/145/4288/2848.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: white;
 }
 
 .card-product h2 {
@@ -31,3 +29,4 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
