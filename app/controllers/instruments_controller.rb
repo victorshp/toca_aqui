@@ -24,6 +24,7 @@ class InstrumentsController < ApplicationController
     end
   end
 
+# Modificar o def update inserindo um 'if' como o do create
   def update
     @instrument = Instrument.find(params[:id])
     @instrument.update(instrument_params)
