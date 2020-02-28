@@ -1,2 +1,29 @@
-<h1>Instruments#new</h1>
-<p>Find me in app/views/instruments/new.html.erb</p>
+<h1 class='m-3'>Novo Instrumento</h1>
+
+<div class='m-3'>
+  <%= form_for(@instrument) do |f| %>
+    <div class="form-group">
+      <%= f.label :name, 'Instrumento' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :inst_type, 'Tipo de instrumento' %>
+      <%= f.text_field :inst_type, class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :price, 'Preço' %>
+      <%= f.text_field :price, class: 'form-control' %>
+    </div>
+
+    <%= f.submit 'Criar Novo Instrumento', class: 'btn btn-primary' %>
+  <% end %>
+
+  <hr>
+
+  <%= link_to '<- Voltar a todos instrumentos', instruments_path %>
+
+</div>
+
+
