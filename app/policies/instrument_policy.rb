@@ -14,10 +14,18 @@ class InstrumentPolicy < ApplicationPolicy
   end
 
   def update?
-    record.user == user
+    is_owner? || user.admin
   end
-  
+
   def destroy?
+    is_owner? || user.admin
+  end
+
+  private
+
+  def is_owner?
     record.user == user
   end
 end
+
+

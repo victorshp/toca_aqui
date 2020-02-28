@@ -1,4 +1,5 @@
 u = User.create!(email: 'teste@teste.com.br', password: 'password')
+u_dois = User.create!(email: 'teste2@teste.com.br', password: 'password')
 
 Instrument.create!(name: 'violino', inst_type: 'cordas', price: 899.00, user: u)
 Instrument.create!(name: 'piano', inst_type: 'cordas', price: 20770.00, user: u)
