@@ -17,7 +17,8 @@ class InstrumentsController < ApplicationController
 
   def create
     @instrument = Instrument.new(instrument_params)
-    if instrument.save
+    @instrument.user = current_user
+    if @instrument.save
       redirect_to instrument_path(@instrument)
     else
       render :new
@@ -28,20 +29,20 @@ class InstrumentsController < ApplicationController
   def update
     @instrument = Instrument.find(params[:id])
     @instrument.update(instrument_params)
-
-    redirect_to instrument_path(@instrument)
+    
+    redirect_to instrument_path(@instrument.id)
   end
 
   def destroy
     @instrument = Instrument.find(params[:id])
-    @instrument.destroy
+    @instrument.delete
 
-    redirect_to instrument_path
+    redirect_to instruments_path
   end
 
   private
 
-  def intrument_params
+  def instrument_params
     params.require(:instrument).permit(:name, :inst_type, :price)
   end
 end

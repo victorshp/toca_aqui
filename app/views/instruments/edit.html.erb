@@ -1,6 +1,6 @@
 <%= simple_form_for @instrument do |f| %>
-  <%= f.input :name %>
-  <%= f.input :inst_type %>
-  <%= f.input :price %>
-  <%= f.button :submit %>
+  <%= f.input :name, label: 'Instrumento' %>
+  <%= f.input :inst_type, label: 'Tipo de Instrumento' %>
+  <%= f.input :price, label: 'Preço' %>
+  <%= f.submit 'Atualizar Anúncio', class: 'btn btn-primary' %>
 <% end %>

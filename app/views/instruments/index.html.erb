@@ -1,3 +1,5 @@
+<%= link_to 'Novo Instrumento', new_instrument_path %>
+
 <div class="row" style="" >
   <% @instruments.each do |instrument| %>
     <div class="col-md-6">
@@ -6,6 +8,11 @@
           <h3><%= instrument.name %></h3>
           <h2><%= instrument.inst_type %></h2>
           <p>R$ <%= instrument.price %></p>
+          <%= link_to 'Exibir', instrument_path(instrument) %>
+          <br>
+          <%= link_to 'Editar', edit_instrument_path(instrument)%>
+          <br>
+          <%= link_to 'Remover Anúncio', instrument_path(instrument), method: :delete, data: {confirm: "Excluir esse anúncio permanentemente?"} %>
         </div>
       </div>
     </div>
