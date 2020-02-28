@@ -1,16 +1,22 @@
-u = User.create!(email: 'teste@teste.com.br', password: 'password')
-u_dois = User.create!(email: 'teste2@teste.com.br', password: 'password')
-u_tres = User.create!(email: 'teste3@teste.com.br', password: 'password')
+# Criação de 4 usuários:
+#   - 1 com 6 anúncios (só quer vender)
+#   - 1 com 2 anúncios (quer vender e comprar)
+#   - 1 com 0 anúncios (só quer comprar)
+#   - 1 admin quer pode mexer em tudo.
 
-Instrument.create!(name: 'violino', inst_type: 'cordas', price: 899.00, user: u)
-Instrument.create!(name: 'piano', inst_type: 'cordas', price: 20770.00, user: u)
-Instrument.create!(name: 'violoncelo', inst_type: 'cordas', price: 1499.00, user: u)
-Instrument.create!(name: 'flauta transversal', inst_type: 'cordas', price: 499.00, user: u)
-Instrument.create!(name: 'viola caipira', inst_type: 'cordas', price: 799.00, user: u)
-Instrument.create!(name: 'baixo', inst_type: 'cordas', price: 599.00, user: u)
+adm = User.create!(email: 'admin@tocaaqui.com.br', password: 'password', admin: true)
+
+u = User.create!(email: 'billy@mays.com', password: 'password')
+Instrument.create!(description: 'Violão Tagima MD 20 dreadnought non-cutaway aço', name: 'Violão Eletroacústico', inst_type: 'Cordas', price: 260.00, user: u)
+Instrument.create!(description: 'Saxofone Tenor Shelter Laqueado Dourado Sgft6435l', name: 'Saxofone Tenor', inst_type: 'Sopro', price: 2499.00, user: u)
+Instrument.create!(description: 'Violino Eagle 4/4 Ve 441 Completo', name: 'Violino', inst_type: 'Cordas', price: 668.99, user: u)
+Instrument.create!(description: 'Flauta Doce Yamaha Soprano Barroco YRS-302BIII Com Bag', name: 'Flauta Doce', inst_type: 'Sopro', price: 152.81, user: u)
+Instrument.create!(description: 'Ukulele Acústico Giannini UKS-21 4 Cordas Nylon Natural Santin', name: 'Ukelele', inst_type: 'Cordas', price: 179.90, user: u)
+Instrument.create!(description: 'Cajon Carron Acústico Inclinado Escudo Fé', name: 'Cajon', inst_type: 'Percussão', price: 119.99, user: u)
+
+u2 = User.create!(email: 'larissa@machado.com.br', password: 'password')
+Instrument.create!(description: 'Yamaha DTX720 k'; name: 'Bateria Digital', inst_type: 'Percussão', price: 17002.30, user: u2)
+Instrument.create!(description: 'Orgão Eletrônico'; name: 'Orgão', inst_type: 'Teclado', price: 3654.00, user: u2)
 
 
-Instrument.create!(name: 'harpa', inst_type: 'cordas', price: 2499.00, user: u_dois)
-Instrument.create!(name: 'bandolim', inst_type: 'cordas', price: 299.00, user: u_dois)
-Instrument.create!(name: 'guitarra eletrica', inst_type: 'cordas', price: 1599.00, user: u_dois)
-
+u3 = User.create!(email: 'wolfgang@mozart.com', password: 'password')
