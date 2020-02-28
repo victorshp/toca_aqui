@@ -9,10 +9,14 @@
           <h2><%= instrument.inst_type %></h2>
           <p>R$ <%= instrument.price %></p>
           <%= link_to 'Exibir', instrument_path(instrument) %>
-          <br>
-          <%= link_to 'Editar', edit_instrument_path(instrument)%>
-          <br>
-          <%= link_to 'Remover Anúncio', instrument_path(instrument), method: :delete, data: {confirm: "Excluir esse anúncio permanentemente?"} %>
+          <% if policy(instrument).edit? %>
+            <br>
+            <%= link_to 'Editar', edit_instrument_path(instrument)%>
+          <% end %>
+          <% if policy(instrument).destroy? %>
+            <br>
+            <%= link_to 'Remover Anúncio', instrument_path(instrument), method: :delete, data: {confirm: "Excluir esse anúncio permanentemente?"} %>
+          <% end %>
         </div>
       </div>
     </div>
