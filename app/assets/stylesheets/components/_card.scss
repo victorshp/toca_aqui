@@ -6,7 +6,6 @@
   display: flex;
   align-items: center;
   width: 360px;
-  background-image: linear-gradient(rgba(255, 164, 27, 0.3), rgba(255, 164, 27, 0.3)), url(https://i.picsum.photos/id/145/4288/2848.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
@@ -30,3 +29,44 @@
   padding: 16px;
 }
 
+.card-show {
+  overflow: hidden;
+  height: 360px;
+  background: #ededed;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-show img {
+  height: 100%;
+  width: 560px;
+  object-fit: cover;
+}
+
+.card-show h1 {
+  font-size: 56px;
+  font-weight: bold;
+  margin: 0;
+  color: #9818d6;
+}
+
+.card-show h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin: 0;
+  color: #9818d6;
+}
+
+.card-show p {
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+  color: #ff5151;
+}
+
+.card-show .card-show-infos {
+  padding: 16px;
+}
