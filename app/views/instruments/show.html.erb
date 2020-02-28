@@ -1,1 +1,7 @@
-<%= link_to "add to cart", orders_path(instrument_id: @instrument.id), method: :post %>
+<h3><%= @instrument.name %></h3>
+<h2><%= @instrument.inst_type %></h2>
+<p>R$ <%= @instrument.price %></p>
+
+<%= link_to "Adicionar ao carrino", orders_path(instrument_id: @instrument.id), method: :post %>
+<br>
+<%= link_to 'Voltar aos anúncios', instruments_path %>
