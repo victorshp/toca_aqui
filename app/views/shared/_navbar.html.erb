@@ -26,6 +26,11 @@
           </div>
         </li>
       <% else %>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active" style="font-size: 24px">
+            <%= link_to "Anúncios", "/instruments", class: "nav-link" %>
+          </li>
+        </ul>
         <li class="nav-item">
           <%= link_to "Faça seu login", new_user_session_path, class: "nav-link" %>
         </li>
