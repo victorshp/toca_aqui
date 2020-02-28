@@ -31,7 +31,7 @@ class InstrumentsController < ApplicationController
 # Modificar o def update inserindo um 'if' como o do create
   def update
     @instrument.update(instrument_params)
-    
+
     redirect_to instrument_path(@instrument.id)
   end
 
@@ -49,6 +49,6 @@ class InstrumentsController < ApplicationController
   end
 
   def instrument_params
-    params.require(:instrument).permit(:name, :inst_type, :price)
+    params.require(:instrument).permit(:name, :inst_type, :price, :photo)
   end
 end

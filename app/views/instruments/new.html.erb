@@ -1,21 +1,13 @@
 <h1 class='m-3'>Novo Instrumento</h1>
 
 <div class='m-3'>
-  <%= form_for(@instrument) do |f| %>
-    <div class="form-group">
-      <%= f.label :name, 'Instrumento' %>
-      <%= f.text_field :name, class: 'form-control' %>
-    </div>
+  <%= simple_form_for(@instrument) do |f| %>
 
-    <div class="form-group">
-      <%= f.label :inst_type, 'Tipo de instrumento' %>
-      <%= f.text_field :inst_type, class: 'form-control' %>
-    </div>
 
-    <div class="form-group">
-      <%= f.label :price, 'Preço' %>
-      <%= f.text_field :price, class: 'form-control' %>
-    </div>
+    <%= f.input :name, label: "Instrumento" %>
+    <%= f.input :inst_type, label: "Tipo de instrumento" %>
+    <%= f.input :price, label: "Preço" %>
+    <%= f.input :photo, as: :file %>
 
     <%= f.submit 'Criar Novo Instrumento', class: 'btn btn-primary' %>
   <% end %>
