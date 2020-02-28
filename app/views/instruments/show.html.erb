@@ -5,16 +5,22 @@
   <% else %>
   <img src="https://i.picsum.photos/id/145/4288/2848.jpg" alt="">
   <% end %>
-  <div class="card-show-infos text-center">
-    <h1><%= @instrument.name %></h3>
-    <h2><%= @instrument.inst_type %></h2>
-    <p>R$ <%= @instrument.price %></p>
+   <div class="card-show-infos text-center">
+    <ul>
+      <li>
+        <h1><%= @instrument.name.upcase %></h3>
+      </li>
+      <li>
+        <p>R$ <%= @instrument.price %></p>
+      </li>
+      <li>
+        <div class="btn btn-primary color-white">
+          <%= link_to "Adicionar ao carrino", orders_path(instrument_id: @instrument.id), method: :post %>
+        </div>
+       </li>
+    </ul>
   </div>
 </div>
 
-<div>
-<%= link_to "Adicionar ao carrino", orders_path(instrument_id: @instrument.id), method: :post %>
-<br>
-<%= link_to 'Voltar aos anúncios', instruments_path %>
-</div>
+
 
