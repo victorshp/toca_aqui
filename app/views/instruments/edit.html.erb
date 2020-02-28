@@ -1,2 +1,6 @@
-<h1>Instruments#edit</h1>
-<p>Find me in app/views/instruments/edit.html.erb</p>
+<%= simple_form_for @instrument do |f| %>
+  <%= f.input :name %>
+  <%= f.input :inst_type %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
+<% end %>
