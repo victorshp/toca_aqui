@@ -21,7 +21,7 @@
         <li class="nav-item dropdown">
           <%= image_tag "https://images-na.ssl-images-amazon.com/images/I/51zmiKOTdlL.png", class: "avatar dropdown-toggle", style: 'height: 56px; width: 56px;', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Meu Perfil", "/", class: "dropdown-item" %>
+            <%= link_to "Meu Perfil", "/profile", class: "dropdown-item" %>
             <%= link_to "Sair da conta", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             <p class>Logado como: <%= current_user.email %></p>
             <% if current_user.admin %>
