@@ -1,0 +1,23 @@
+<h1><%= current_user.email %>, sua coletânea de instrumentos</h1>
+
+<div class="row" style="" >
+  <% @instruments.each do |instrument| %>
+    <div class="col-md-6">
+      <div class="card-product mt-5" style='width:560px; height: 250px;' >
+        <div class="card-product-infos">
+          <h3><%= instrument.name %></h3>
+          <h2><%= instrument.inst_type %></h2>
+          <p>R$ <%= instrument.price %></p>
+          <%= link_to 'Exibir', instrument_path(instrument) %>
+          <% if policy(instrument).edit? %>
+            <br>
+            <%= link_to 'Editar', edit_instrument_path(instrument)%>
+          <% end %>
+          <% if policy(instrument).destroy? %>
+            <br>
+            <%= link_to 'Remover Anúncio', instrument_path(instrument), method: :delete, data: {confirm: "Excluir esse anúncio permanentemente?"} %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
