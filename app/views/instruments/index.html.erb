@@ -6,6 +6,7 @@
           <h3><%= instrument.name %></h3>
           <h2><%= instrument.inst_type %></h2>
           <p>R$ <%= instrument.price %></p>
+          <%= link_to 'Editar', edit_instrument_path(instrument.id)%>
         </div>
       </div>
     </div>
