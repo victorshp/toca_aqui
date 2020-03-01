@@ -31,46 +31,45 @@
 
 .card-show {
   overflow: hidden;
-  height: 560px;
-  background: #ededed;
+  background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
 }
 
-.card-show img {
-  height: 100%;
-  width: 800px;
+.card-show > img {
+  height: 600px;
+  width: 100%;
   object-fit: cover;
 }
 
-.card-show h1 {
-  font-size: 56px;
-  font-weight: bold;
-  margin: 0;
-  color: black;
-}
-
 .card-show h2 {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
   margin: 0;
-  color: #9818d6;
+  position:relative;
+  top:-64px;
 }
 
 .card-show p {
-  font-size: 18px;
-  line-height: 1.4;
+  font-size: 12px;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-  color: #9818d6;
+  margin: 0;
+  position:relative;
+  top:-40px;
 }
+
 
 .card-show .card-show-infos {
   padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  height: 160px;
 }
 
-.card-show-infos ul {
-  list-style-type: none;
+.card-show-infos .card-show-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
 }

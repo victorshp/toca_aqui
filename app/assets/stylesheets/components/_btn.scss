@@ -1,0 +1,17 @@
+.btn-show {
+     border: 0px solid #004B84;
+     background: #9818d6;
+     padding: 3px 21px;
+     border-radius: 16px;
+     font-size: 16px;
+     text-decoration: none;
+     vertical-align: middle;
+     letter-spacing: 2px;
+     font-weight: bold;
+    }
+
+   .btn-show:hover:before {
+     content: "Adicionar ao carrinho!";
+     text-decoration: none;
+    }
+

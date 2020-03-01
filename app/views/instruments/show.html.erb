@@ -1,26 +1,19 @@
-
 <div class="card-show">
-  <% if @instrument.photo.attached? %>
-  <%= cl_image_tag @instrument.photo.key %>
-  <% else %>
-  <img src="https://i.picsum.photos/id/145/4288/2848.jpg" alt="">
-  <% end %>
-   <div class="card-show-infos text-center">
-    <ul>
-      <li>
-        <h1><%= @instrument.name.upcase %></h3>
-      </li>
-      <li>
-        <p>R$ <%= @instrument.price %></p>
-      </li>
-      <li>
-        <div class="btn btn-primary color-white">
-          <%= link_to "Adicionar ao carrino", orders_path(instrument_id: @instrument.id), method: :post %>
-        </div>
-       </li>
-    </ul>
+      <div class="card-show">
+      <% if @instrument.photo.attached? %>
+      <%= cl_image_tag @instrument.photo.key %>
+      <% else %>
+      <img src="https://i.picsum.photos/id/145/4288/2848.jpg" alt="">
+      <% end %>
+    </div>
+  <div class="card-show-infos">
+    <div>
+      <h2> <%= @instrument.name.upcase %> </h2>
+      <p>Short description here!</p>
+    </div>
+    <div class="btn-show">
+      <%= link_to "R$ #{@instrument.price}", orders_path(instrument_id: @instrument.id), method: :post %>
+    </div>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-show-user avatar-bordered" />
   </div>
 </div>
-
-
-
