@@ -1,4 +1,3 @@
-
 <div class="card-show">
   <% if @instrument.photo.attached? %>
   <%= cl_image_tag @instrument.photo.key %>
@@ -8,14 +7,14 @@
    <div class="card-show-infos text-center">
     <ul>
       <li>
-        <h1><%= @instrument.name.upcase %></h3>
+        <h2><%= @instrument.description.upcase %></h2>
       </li>
       <li>
         <p>R$ <%= @instrument.price %></p>
       </li>
       <li>
         <div class="btn btn-primary color-white">
-          <%= link_to "Adicionar ao carrino", orders_path(instrument_id: @instrument.id), method: :post %>
+          <%= link_to "Comprar", orders_path(instrument_id: @instrument.id), method: :post %>
         </div>
        </li>
     </ul>
