@@ -7,12 +7,19 @@
     <%= f.input :first_name,
                 required: true,
                 autofocus: true,
-                label: "Nome"%>
+                placeholder: 'Tom',
+                label: "Nome" %>
     <%= f.input :last_name,
                 required: true,
+                placeholder: 'Jobim',
                 label: "Sobrenome" %>
+    <%= f.input :username,
+                required: true,
+                placeholder: 'tomjobim',
+                label: "Usuário"%>
     <%= f.input :email,
                 required: true,
+                placeholder: 'tom.jobim@gmail.com',
                 input_html: { autocomplete: "email" }%>
     <%= f.input :password, label: 'Senha',
                 required: true,
