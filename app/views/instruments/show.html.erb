@@ -1,19 +1,29 @@
 <div class="card-show">
-      <div class="card-show">
-      <% if @instrument.photo.attached? %>
-      <%= cl_image_tag @instrument.photo.key %>
-      <% else %>
-      <img src="https://i.picsum.photos/id/145/4288/2848.jpg" alt="">
-      <% end %>
+  <% if @instrument.photo.any? %>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% @instrument.photo.each do |photo| %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key %>
+          </div>
+        <% end %>
+      </div>
     </div>
+  <% else %>
+    <div class="card-show">
+      <img src="https://i.picsum.photos/id/145/4288/2848.jpg" alt="">
+    </div>
+  <% end %>
   <div class="card-show-infos">
     <div>
       <h2> <%= @instrument.name.upcase %> </h2>
       <p>Short description here!</p>
     </div>
-    <div class="btn-show">
-      <%= link_to "R$ #{@instrument.price}", orders_path(instrument_id: @instrument.id), method: :post %>
-    </div>
+    <%= link_to orders_path(instrument_id: @instrument.id), method: :post do %>
+      <div class="btn-show">
+        <span><%= "R$ #{@instrument.price}" %></span>
+      </div>
+    <% end %>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-show-user avatar-bordered" />
   </div>
 </div>

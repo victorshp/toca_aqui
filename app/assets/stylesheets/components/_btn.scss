@@ -8,6 +8,13 @@
      vertical-align: middle;
      letter-spacing: 2px;
      font-weight: bold;
+     color: white;
+
+     &:hover {
+      span {
+        display: none;
+       }
+     }
     }
 
    .btn-show:hover:before {

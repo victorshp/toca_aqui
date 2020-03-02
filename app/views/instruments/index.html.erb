@@ -1,6 +1,4 @@
 <%= link_to 'Novo Instrumento', new_instrument_path %>
-<br>
-<br>
 <div class="d-flex justify content left">
   <i class="fas fa-star"></i>
   <p>= seu anúncio</p>
@@ -8,18 +6,17 @@
 
 <div class="row" style="" >
   <% @instruments.each do |instrument| %>
-    <div class="col-md-6">
+    <div class="col-md-12 card-index">
       <% if instrument.photo.attached? %>
-      <div class="card-product mt-5" style="background-image: linear-gradient(rgba(255, 164, 27, 0.3), rgba(255, 164, 27, 0.3)), url('<%= cl_image_path instrument.photo.key %>'); width:560px; height: 250px;" >
+      <div class="card-product mt-10" style="background-image: linear-gradient(rgba(255, 164, 27, 0.3), rgba(255, 164, 27, 0.3)), url('<%= cl_image_path instrument.photo %>'); width:560px; height: 250px;" >
       <% else %>
-      <div class="card-product mt-5" style='background-image: linear-gradient(rgba(255, 164, 27, 0.3), rgba(255, 164, 27, 0.3)), url(https://i.picsum.photos/id/145/4288/2848.jpg); width:560px; height: 250px;' >
+      <div class="card-product mt-10" style='background-image: linear-gradient(rgba(255, 164, 27, 0.3), rgba(255, 164, 27, 0.3)), url(https://i.picsum.photos/id/145/4288/2848.jpg); width:560px; height: 250px;' >
       <% end %>
-        <div class="card-product-infos">
-          <h3><strong><%= instrument.name %></strong></h3>
+        <div class="card-product-infos linkable">
+          <h3><strong><%= instrument.name.upcase %></strong></h3>
           <% if instrument.user_id == current_user.id %>
-            <i class="fas fa-star", style='color: yellow'></i>
+            <i class="fas fa-star" id="star", style='color: yellow'></i>
           <% end %>
-          <h2><%= instrument.inst_type %></h2>
           <p>R$ <%= instrument.price %></p>
           <%= link_to 'Exibir', instrument_path(instrument) %>
         </div>
@@ -27,3 +24,5 @@
     </div>
   <% end %>
 </div>
+
+
