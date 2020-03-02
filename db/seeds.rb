@@ -4,6 +4,8 @@
 #   - 1 com 0 anúncios (só quer comprar)
 #   - 1 admin quer pode mexer em tudo.
 
+User.destroy_all
+
 adm = User.create!(first_name: 'Rafael', last_name: 'Ravenscroft', email: 'admin@tocaaqui.com.br', password: 'password', admin: true)
 
 u = User.create!(first_name: 'Billy', last_name: 'Mays', email: 'billy@mays.com', password: 'password')

@@ -1,1 +1,9 @@
 // Specific CSS for your home-page
+$primary-color: #5b5656;
+$nav-color: #4d4646;
+$font-color: #f5eaea;
+
+body {
+  background-color: $primary-color;
+  color: $font-color;
+}
