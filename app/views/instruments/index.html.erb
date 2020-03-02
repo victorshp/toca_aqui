@@ -1,4 +1,10 @@
 <%= link_to 'Novo Instrumento', new_instrument_path %>
+<br>
+<br>
+<div class="d-flex justify content left">
+  <i class="fas fa-star"></i>
+  <p>= seu anúncio</p>
+</div>
 
 <div class="row" style="" >
   <% @instruments.each do |instrument| %>
@@ -10,17 +16,12 @@
       <% end %>
         <div class="card-product-infos">
           <h3><strong><%= instrument.name %></strong></h3>
+          <% if instrument.user_id == current_user.id %>
+            <i class="fas fa-star", style='color: yellow'></i>
+          <% end %>
           <h2><%= instrument.inst_type %></h2>
           <p>R$ <%= instrument.price %></p>
           <%= link_to 'Exibir', instrument_path(instrument) %>
-          <% if policy(instrument).edit? %>
-            <br>
-            <%= link_to 'Editar', edit_instrument_path(instrument)%>
-          <% end %>
-          <% if policy(instrument).destroy? %>
-            <br>
-            <%= link_to 'Remover Anúncio', instrument_path(instrument), method: :delete, data: {confirm: "Excluir esse anúncio permanentemente?"} %>
-          <% end %>
         </div>
       </div>
     </div>
