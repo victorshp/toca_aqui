@@ -4,7 +4,7 @@
   <p>= seu anúncio</p>
 </div>
 
-<div class="row" style="" >
+<div class="row">
   <% @instruments.each do |instrument| %>
     <%= link_to instrument_path(instrument) do %>
       <div class="col-md-12 card-index">
@@ -20,6 +20,7 @@
               <% end %>
               <p>R$ <%= instrument.price %></p>
             </div>
+
         </div>
       </div>
     <% end %>
