@@ -1,10 +1,6 @@
 class OrdersController < ApplicationController
   skip_after_action :verify_authorized
 
-  def new
-    @order = Order.new
-  end
-
   def create
     @order = Order.new
     @order.date = DateTime.now
@@ -15,6 +11,7 @@ class OrdersController < ApplicationController
     # Change the owner of the instrument changes.
     purchased_instrument =  Instrument.find(params[:instrument_id])
     purchased_instrument.user_id = current_user.id
+    purchased_instrument.purchased = true
     purchased_instrument.save
     redirect_to profile_index_path
   end
