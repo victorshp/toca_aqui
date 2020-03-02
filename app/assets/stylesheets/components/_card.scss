@@ -1,6 +1,6 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 160px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
@@ -9,6 +9,10 @@
   background-size: cover;
   background-repeat: no-repeat;
   color: white;
+}
+
+.card-index {
+  border: 1px solid black;
 }
 
 .card-product h2 {
@@ -29,48 +33,74 @@
   padding: 16px;
 }
 
-.card-show {
-  overflow: hidden;
-  height: 560px;
-  background: #ededed;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-}
-
-.card-show img {
-  height: 100%;
-  width: 800px;
-  object-fit: cover;
-}
-
-.card-show h1 {
-  font-size: 56px;
-  font-weight: bold;
-  margin: 0;
+.card-product-infos h3 {
+  position: absolute;
+  right: 16px;
+  top: 85px;
   color: black;
 }
 
+.card-product-infos p {
+  position: absolute;
+  right: 20px;
+  top: 235px;
+  color: white;
+  font-size: 16px;
+}
+
+.card-product-infos i {
+  position: absolute;
+  left: 20px;
+  top: 55px;
+  color: black;
+  font-size: 16px;
+}
+
+#star {
+  color: #9818d6;
+}
+
+.card-show {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-show > img {
+  height: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
 .card-show h2 {
-  font-size: 32px;
+  font-size: 40px;
   font-weight: bold;
   margin: 0;
-  color: #9818d6;
+  position:relative;
+  top:-64px;
 }
 
 .card-show p {
-  font-size: 16px;
-  line-height: 1.4;
+  font-size: 12px;
   opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
-  color: #9818d6;
+  margin: 0;
+  position:relative;
+  top:-40px;
 }
+
 
 .card-show .card-show-infos {
   padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  height: 160px;
 }
 
-.card-show-infos ul {
-  list-style-type: none;
+.card-show-infos .card-show-user {
+  position: absolute;
+  right: 16px;
+  top: -20px;
+  width: 40px;
 }

@@ -7,7 +7,7 @@
     <%= f.input :name, label: "Instrumento" %>
     <%= f.input :inst_type, label: "Tipo de instrumento" %>
     <%= f.input :price, label: "Preço" %>
-    <%= f.input :photo, as: :file %>
+    <%= f.input :photo, as: :file, input_html: { multiple: true } %>
 
     <%= f.submit 'Criar Novo Instrumento', class: 'btn btn-primary' %>
   <% end %>
