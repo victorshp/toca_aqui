@@ -5,4 +5,8 @@ class Instrument < ApplicationRecord
   validates :inst_type, presence: true
   validates :price, presence: true
   has_one_attached :photo
+
+  include PgSearch::Model
+  multisearchable against: [:user]
 end
+ 

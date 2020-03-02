@@ -10,6 +10,7 @@ gem 'redis'
 gem 'devise'
 gem 'pundit'
 gem 'devise-i18n'
+gem 'pg_search'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
