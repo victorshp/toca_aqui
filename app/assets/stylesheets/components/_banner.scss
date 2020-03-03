@@ -1,0 +1,33 @@
+.banner {
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: baseline;
+
+}
+
+.banner{
+  h1 {
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-size: 26px;
+    font-weight: bold;
+  };
+  a {
+    background-color: #ffd269 !important;
+    color: black;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+}
+
+// .banner p {
+//   font-size: 20px;
+//   color: white;
+//   opacity: .7;
+//   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+// }

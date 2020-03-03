@@ -1,4 +1,4 @@
-<div class="navbar navbar-expand-sm justify-content-between navbar-light navbar-lewagon shadow-sm mb-5 bg-white rounded navbar transparent navbar-inverse">
+<div class="navbar navbar-expand-sm justify-content-between navbar-light navbar-lewagon shadow-sm bg-white rounded navbar transparent navbar-inverse">
   <%= link_to "/", class: "navbar-brand" do %>
   <!-- link_to will redirect to root. -->
       <%= image_tag "toca_aqui-logo.png", alt: "Toca Aqui logo" %>
@@ -29,7 +29,7 @@
               <%= link_to "Meus Anúncios", "/profile", class: "dropdown-item" %>
             <% end %>
             <%= link_to "Sair da conta", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            
+
           </div>
         </li>
       <% else %>
