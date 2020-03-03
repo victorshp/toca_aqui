@@ -1,6 +1,6 @@
-<h1 class='m-3'>Novo Instrumento</h1>
+<h1 class='m-3 form'>Novo Instrumento</h1>
 
-<div class='m-3'>
+<div class='m-3 form'>
   <%= simple_form_for(@instrument) do |f| %>
 
 
@@ -10,7 +10,7 @@
     <%= f.input :price, label: "Preço" %>
     <%= f.input :photo, as: :file, input_html: { multiple: true } %>
 
-    <%= f.submit 'Criar Novo Instrumento', class: 'btn btn-primary' %>
+    <%= f.submit 'Novo Instrumento', class: 'btn-show' %>
   <% end %>
 
   <hr>
