@@ -1,6 +1,10 @@
 class OrdersController < ApplicationController
   skip_after_action :verify_authorized
 
+  def index
+    @order = current_user.orders
+  end
+
   def create
     @order = Order.new
     @order.date = DateTime.now
