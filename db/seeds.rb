@@ -4,6 +4,10 @@
 #   - 1 com 0 anúncios (só quer comprar)
 #   - 1 admin quer pode mexer em tudo.
 
+puts "cleaning database"
+
+Ingredient.destroy_all if Rails.env.development?
+
 adm = User.create!(first_name: 'Rafael', last_name: 'Ravenscroft', email: 'admin@tocaaqui.com.br', password: 'password', admin: true)
 
 u = User.create!(first_name: 'Billy', last_name: 'Mays', email: 'billy@mays.com', password: 'password')
@@ -20,3 +24,6 @@ Instrument.create!(description: 'Orgão Eletrônico', name: 'Orgão', inst_type:
 
 
 u3 = User.create!(first_name: 'Wolfgang', last_name: 'Mozart', email: 'wolfgang@mozart.com', password: 'password')
+
+puts 'we have #{Instrument.count} ingredients'
+puts 'we have #{User.count} ingredients'
