@@ -22,7 +22,7 @@
     </div>
     <%= link_to orders_path(instrument_id: @instrument.id), method: :post do %>
       <div class="btn-show">
-        <span><%= "R$ #{@instrument.price}" %></span>
+        <span><%= number_to_currency @instrument.price %></span>
       </div>
     <% end %>
     <img src="https://res.cloudinary.com/dy3bkpda4/image/upload/v1583253839/A8B9548F-FC2B-4205-AA06-3E74CE547CBC_4_5005_c_v7mhky.jpg" class="card-show-user avatar-bordered" />

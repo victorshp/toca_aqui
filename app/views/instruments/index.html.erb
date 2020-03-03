@@ -13,8 +13,9 @@
         <% end %>
         </div>
       <div class="card-product-infos">
-        <h2><%= instrument.name %></h2>
-        <p><%= instrument.description %></p>
+        <h4><%= instrument.description %></h4>
+        <p><%= instrument.name %></p>
+        <p> <%= number_to_currency instrument.price %></p>
       </div>
     </div>
   <% end %>

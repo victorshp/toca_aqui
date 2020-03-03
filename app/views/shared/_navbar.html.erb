@@ -13,9 +13,6 @@
       <li class="nav-item">
         <%= link_to "ANÚNCIOS", "/instruments", class: "nav-link" %>
       </li>
-      <li class="nav-item">
-        <%= link_to "SOBRE", "/", class: "nav-link" %>
-      </li>
       <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <%= image_tag "placeholder_avatar.png", class: "avatar dropdown-toggle", style: 'height: 40px; width: 40px;', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
@@ -26,10 +23,9 @@
             <% end %>
             <hr class='mx-2'>
             <% unless current_user.admin %>
-              <%= link_to "Meus Anúncios", "/profile", class: "dropdown-item" %>
+              <%= link_to "Meu Perfil", "/profile", class: "dropdown-item" %>
             <% end %>
             <%= link_to "Sair da conta", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-
           </div>
         </li>
       <% else %>

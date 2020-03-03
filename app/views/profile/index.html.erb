@@ -1,13 +1,40 @@
-<h1><%= current_user.first_name %>, sua coletânea de instrumentos</h1>
+<h1>Olá, <%= current_user.first_name %></h1>
+<h3>Seus Anúncios</h3>
 
-<div class="row" style="" >
-  <% @instruments.each do |instrument| %>
+<% @instruments.each do |instrument| %>
+  <% if instrument.purchased == false %>
     <div class="col-md-6">
       <div class="card-product mt-5" style='width:560px; height: 250px;' >
         <div class="card-product-infos">
-          <h3><%= instrument.name %></h3>
-          <h2><%= instrument.inst_type %></h2>
-          <p>R$ <%= instrument.price %></p>
+        <h3 style='color: black'><%= instrument.description %></h3>
+        <h2 style='color: black'><%= instrument.name %></h2>
+        <p style='color: black'> <%= number_to_currency instrument.price %></p>
+        <%= link_to 'Exibir', instrument_path(instrument) %>
+        <% if policy(instrument).edit? %>
+          <br>
+          <%= link_to 'Editar', edit_instrument_path(instrument)%>
+        <% end %>
+        <% if policy(instrument).destroy? %>
+          <br>
+          <%= link_to 'Remover Anúncio', instrument_path(instrument), method: :delete, data: {confirm: "Excluir esse anúncio permanentemente?"} %>
+        <% end %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="mt-5">
+  <h3>Suas Compras</h3>
+
+  <% @instruments.each do |instrument| %>
+    <% if instrument.purchased%>
+      <div class="col-md-6">
+        <div class="card-product mt-5" style='width:560px; height: 250px;' >
+          <div class="card-product-infos">
+          <h3 style='color: black'><%= instrument.description %></h3>
+          <h2 style='color: black'><%= instrument.name %></h2>
+          <p style='color: black'> <%= number_to_currency instrument.price %></p>
           <%= link_to 'Exibir', instrument_path(instrument) %>
           <% if policy(instrument).edit? %>
             <br>
@@ -17,7 +44,10 @@
             <br>
             <%= link_to 'Remover Anúncio', instrument_path(instrument), method: :delete, data: {confirm: "Excluir esse anúncio permanentemente?"} %>
           <% end %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
   <% end %>
+
+</div>
