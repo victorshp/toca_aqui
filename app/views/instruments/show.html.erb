@@ -1,25 +1,31 @@
 <div class="card-show">
-  <% if @instrument.photo.attached? %>
-  <%= cl_image_tag @instrument.photo.key %>
+  <% if @instrument.photo.any? %>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <% @instrument.photo.each do |photo| %>
+          <div class="carousel-item active">
+            <%= cl_image_tag photo.key, class: 'image-cover' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   <% else %>
-  <img src="https://i.picsum.photos/id/145/4288/2848.jpg" alt="">
+    <div class="card-default">
+      <img src="https://i.picsum.photos/id/145/4288/2848.jpg" alt="">
+    </div>
   <% end %>
-   <div class="card-show-infos text-center">
-    <ul>
-      <li>
-        <h2><%= @instrument.description.upcase %></h2>
-      </li>
-      <li>
-        <p>R$ <%= @instrument.price %></p>
-      </li>
-      <li>
-        <div class="btn btn-primary color-white">
-          <%= link_to "Comprar", orders_path(instrument_id: @instrument.id), method: :post %>
-        </div>
-       </li>
-    </ul>
+
+  <div class="card-show-infos">
+    <div>
+      <h2> <%= @instrument.name.upcase %> </h2>
+      <p> <%= @instrument.description %> </p>
+    </div>
+    <%= link_to orders_path(instrument_id: @instrument.id), method: :post do %>
+      <div class="btn-show">
+        <span><%= "R$ #{@instrument.price}" %></span>
+      </div>
+    <% end %>
+    <img src="https://res.cloudinary.com/dy3bkpda4/image/upload/v1583253839/A8B9548F-FC2B-4205-AA06-3E74CE547CBC_4_5005_c_v7mhky.jpg" class="card-show-user avatar-bordered" />
+
   </div>
 </div>
-
-
-

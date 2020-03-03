@@ -1,0 +1,41 @@
+.btn-show {
+     border: 0px solid #004B84;
+     background: #E0A800;
+     padding: 3px 21px;
+     border-radius: 16px;
+     font-size: 16px;
+     text-decoration: none;
+     vertical-align: middle;
+     letter-spacing: 2px;
+     font-weight: bold;
+     color: white;
+     text-align: center;
+     width: 250px;
+
+     &:hover {
+      span {
+        display: none;
+       }
+     }
+    }
+
+   .btn-show:hover:before {
+     content: "Adicionar ao carrinho!";
+     text-decoration: none;
+   }
+
+.btn-index {
+  border: 0px solid #004B84;
+  background: #E0A800;
+  padding: 3px 21px;
+  border-radius: 16px;
+  font-size: 16px;
+  text-decoration: none;
+  vertical-align: middle;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  width: 350px;
+  margin-bottom: 5px;
+}

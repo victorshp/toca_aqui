@@ -1,33 +1,21 @@
-<%= link_to 'Novo Instrumento', new_instrument_path %>
-<br>
-<br>
-<div class="d-flex justify content left">
-  <i class="fas fa-star"></i>
-  <p>= seu anúncio</p>
-</div>
-
-<div class="row">
-  <% @instruments.each do |instrument| %>
-    <% unless instrument.purchased == true %>
-      <div class="col-md-6">
-        <% if instrument.photo.attached? %>
-        <div class="card-product mt-5" style="background-image: linear-gradient(rgba(255, 164, 27, 0.3), rgba(255, 164, 27, 0.3)), url('<%= cl_image_path instrument.photo.key %>'); width:560px; height: 250px;" >
+<%= link_to new_instrument_path do %>
+  <div class="btn-index">
+    <span><%= "Novo anúncio" %></span>
+  </div>
+<% end %>
+<% @instruments.each do |instrument| %>
+  <%= link_to instrument_path(instrument) do %>
+    <div class="card-product">
+      <% if instrument.photo.any? %>
+        <div class="card-index mt-10" style="background-image: linear-gradient(rgba(255, 164, 27, 0.3), rgba(255, 164, 27, 0.3)), url('<%= cl_image_path instrument.photo.last.key %>'); width:360px; height: 350px;" >
         <% else %>
-        <div class="card-product mt-5" style='background-image: linear-gradient(rgba(255, 164, 27, 0.3), rgba(255, 164, 27, 0.3)), url(https://i.picsum.photos/id/145/4288/2848.jpg); width:560px; height: 250px;' >
+        <div class="card-index mt-10" style='background-image: linear-gradient(rgba(255, 164, 27, 0.3), rgba(255, 164, 27, 0.3)), url(https://i.picsum.photos/id/145/4288/2848.jpg); width:360px; height: 350px;' >
         <% end %>
-          <div class="card-product-infos">
-            <h3><strong><%= instrument.description %></strong></h3>
-            <% unless current_user.nil? %>
-              <% if instrument.user_id == current_user.id %>
-                <i class="fas fa-star", style='color: yellow'></i>
-              <% end %>
-            <% end %>
-            <h2><%= instrument.name %></h2>
-            <p>R$ <%= instrument.price %></p>
-            <%= link_to 'Exibir', instrument_path(instrument) %>
-          </div>
         </div>
+      <div class="card-product-infos">
+        <h2><%= instrument.name %></h2>
+        <p><%= instrument.description %></p>
       </div>
-    <% end %>
+    </div>
   <% end %>
-</div>
+<% end %>
