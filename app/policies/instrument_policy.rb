@@ -18,7 +18,7 @@ class InstrumentPolicy < ApplicationPolicy
   end
 
   def destroy?
-    is_owner? || user.admin
+    (is_owner? || user.admin) && record.orders.count.zero?
   end
 
   private
