@@ -4,28 +4,28 @@
       <div class="carousel-inner">
         <% @instrument.photo.each do |photo| %>
           <div class="carousel-item active">
-            <%= cl_image_tag photo.key %>
+            <%= cl_image_tag photo.key, class: 'image-cover' %>
           </div>
         <% end %>
       </div>
     </div>
   <% else %>
-    <div class="card-show">
+    <div class="card-default">
       <img src="https://i.picsum.photos/id/145/4288/2848.jpg" alt="">
     </div>
   <% end %>
-  
+
   <div class="card-show-infos">
     <div>
       <h2> <%= @instrument.name.upcase %> </h2>
-      <p>Short description here!</p>
+      <p> <%= @instrument.description %> </p>
     </div>
     <%= link_to orders_path(instrument_id: @instrument.id), method: :post do %>
       <div class="btn-show">
-        <span><%= "R$ #{@instrument.price}" %></span>
+        <span><%= number_to_currency @instrument.price %></span>
       </div>
     <% end %>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-show-user avatar-bordered" />
+    <img src="https://res.cloudinary.com/dy3bkpda4/image/upload/v1583253839/A8B9548F-FC2B-4205-AA06-3E74CE547CBC_4_5005_c_v7mhky.jpg" class="card-show-user avatar-bordered" />
 
   </div>
 </div>

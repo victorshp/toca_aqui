@@ -1,6 +1,6 @@
 .btn-show {
      border: 0px solid #004B84;
-     background: #9818d6;
+     background: #E0A800;
      padding: 3px 21px;
      border-radius: 16px;
      font-size: 16px;
@@ -9,6 +9,8 @@
      letter-spacing: 2px;
      font-weight: bold;
      color: white;
+     text-align: center;
+     width: 250px;
 
      &:hover {
       span {
@@ -18,23 +20,6 @@
     }
 
    .btn-show:hover:before {
-     content: "Adicionar ao carrinho!";
+     content: "Comprar";
      text-decoration: none;
-    }
-
-.banner {
-  .btn-ghost {
-    color: #4A4A4A;
-    border: 1px solid #4A4A4A;
-    padding: 8px 24px;
-    border-radius: 50px;
-    font-weight: lighter;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-    margin-bottom: 100px;
-  }
-
-  .btn-ghost:hover {
-    opacity: 1;
-  }
-}
+   }
