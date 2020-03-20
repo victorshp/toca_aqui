@@ -1,5 +1,5 @@
-<h1>Olá, <%= current_user.first_name %></h1>
-<h3>Seus Anúncios</h3>
+<h1 style="color:black">Olá, <%= current_user.first_name %></h1>
+<h3 style="color:black">Seus Anúncios</h3>
 
 <% @instruments.each do |instrument| %>
   <% if instrument.purchased == false %>
@@ -25,7 +25,7 @@
 <% end %>
 
 <div class="mt-5">
-  <h3>Suas Compras</h3>
+  <h3 style="color:black">Suas Compras</h3>
 
   <% @instruments.each do |instrument| %>
     <% if instrument.purchased%>
